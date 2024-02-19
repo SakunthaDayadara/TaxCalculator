@@ -1,0 +1,24 @@
+<%= form_with(model: tax) do |form| %>
+  <% if tax.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tax.errors.count, "error") %> prohibited this tax from being saved:</h2>
+
+      <ul>
+        <% tax.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :grossincome, style: "display: block" %>
+    <%= form.text_field :grossincome %>
+  </div>
+
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

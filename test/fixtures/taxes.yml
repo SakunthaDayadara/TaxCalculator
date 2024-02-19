@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grossincome: 9.99
+  taxdeduction: 9.99
+  epfdeduction: 9.99
+  employerepfcontribution: 9.99
+  netincome: 9.99
+
+two:
+  grossincome: 9.99
+  taxdeduction: 9.99
+  epfdeduction: 9.99
+  employerepfcontribution: 9.99
+  netincome: 9.99
