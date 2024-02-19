@@ -17,6 +17,7 @@
 
     <tbody >
     <% @taxes.each do |tax| %>
+      <% cache tax do %>
       <tr>
         <td><%= tax.grossincome %></td>
         <td><%= tax.taxdeduction %></td>
@@ -24,9 +25,8 @@
         <td><%= tax.employerepfcontribution %></td>
         <td><%= tax.netincome %></td>
         <td><%= link_to "Show", tax %></td>
-
-
       </tr>
+      <% end %>
     <% end %>
     </tbody>
   </table>
@@ -37,4 +37,4 @@
 
 </div>
 
-<%= link_to "New tax", new_tax_path %>
+

@@ -1,6 +1,7 @@
 class TaxesController < ApplicationController
   before_action :set_tax, only: %i[ show edit update destroy ]
 
+
   # GET /taxes or /taxes.json
   def index
     @taxes = Tax.all
@@ -65,6 +66,7 @@ class TaxesController < ApplicationController
     end
 
 
+
   def calculate_tax_deduction_and_net_income
     gross_income = @tax.grossincome
 
@@ -98,7 +100,7 @@ class TaxesController < ApplicationController
     end
 
     # EPF/ETF deductions
-    epf_deduction = gross_income * 0.12
+    epf_deduction = gross_income * 0.08
     employer_epf_contribution = gross_income * 0.03
 
     # Net income after tax and EPF deductions

@@ -1,10 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @tax %>
 
-<div>
-  <%= link_to "Edit this tax", edit_tax_path(@tax) %> |
-  <%= link_to "Back to taxes", taxes_path %>
 
-  <%= button_to "Destroy this tax", @tax, method: :delete %>
+<table class="table table-striped table-hover">
+  <thead class="table table-dark">
+  <tr>
+    <th>Gross Income</th>
+    <th>Tax Deduction</th>
+    <th>EPF Deduction</th>
+    <th>Employer EPF Contribution</th>
+    <th>Net Income</th>
+
+  </tr>
+  </thead>
+
+  <tbody >
+  <% @taxes %>
+    <tr>
+      <td><%= @tax.grossincome %></td>
+      <td><%= @tax.taxdeduction %></td>
+      <td><%= @tax.epfdeduction %></td>
+      <td><%= @tax.employerepfcontribution %></td>
+      <td><%= @tax.netincome %></td>
+
+
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+<div><br>
+  <%= link_to "Edit this tax", edit_tax_path(@tax), class:"btn btn-secondary" %> |
+  <%= link_to "Back to tax History", taxes_path, class:"btn btn-dark" %>
+
+  <br><br>
+
+  <%= button_to "Destroy this tax", @tax, method: :delete , class:"btn btn-danger" %>
 </div>

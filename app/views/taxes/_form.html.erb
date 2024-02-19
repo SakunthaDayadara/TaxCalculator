@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :grossincome, style: "display: block" %>
-    <%= form.text_field :grossincome %>
+  <div class="field form-group">
+    <%= form.label :grossincome, 'Gross Income', style: "display: block" %><br>
+    <%= form.text_field :grossincome, class:"form-control", placeholder: "Enter your gross income", required: true %>
   </div>
 
-
+  <br>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-primary" %>
   </div>
 <% end %>
