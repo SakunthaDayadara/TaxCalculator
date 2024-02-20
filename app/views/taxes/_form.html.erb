@@ -11,14 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= form.label :grossincome, 'Gross Income', style: "display: block" %><br>
+  <div class="row">
+  <div class="col-md-6">
+    <br>
+    <%= image_tag('taximg.jpg') %>
+  </div>
+
+
+  <div class="col-md-6" style="background-color: lightblue;border-radius: 25px;height: 210px;">
+  <div class="field form-group" style=""><br>
+    <%= form.label :grossincome, 'Gross Income', style: "display: block; font-size: 20px;" %><br>
     <%= form.text_field :grossincome, class:"form-control", placeholder: "Enter your gross income", required: true %>
   </div>
 
-  <br>
+  <div >
+    <br>
+        <%= form.submit class:"btn btn-primary" %>
+   </div>
 
-  <div>
-    <%= form.submit class:"btn btn-primary" %>
+
   </div>
+
+  </div>
+  
+
+
 <% end %>
