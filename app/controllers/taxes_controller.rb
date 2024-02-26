@@ -116,7 +116,10 @@ class TaxesController < ApplicationController
   end
 
     # Only allow a list of trusted parameters through.
-    def tax_params
-      params.require(:tax).permit(:grossincome)
-    end
+  def tax_params
+    # Use strong parameters to permit only the necessary attributes and sanitize grossincome
+    sanitized_params = params.require(:tax).permit(:grossincome)
+    sanitized_params[:grossincome] = ActionController::Base.helpers.sanitize(sanitized_params[:grossincome])
+    sanitized_params
+  end
 end
